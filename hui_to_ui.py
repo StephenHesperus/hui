@@ -23,11 +23,12 @@ def main():
     input_ = etree.parse('input.hui')
     result = transform(input_)
 
-    # Here we use f.write(str(xslt(doc))) instead of xslt(doc).write()
-    # because str() will respect the XSLT xsl:output method, while write()
-    # doesn't.
+    # get bytes object with xml declaration and xml encoding attribute
+    result_b = etree.tostring(result, encoding="utf-8", xml_declaration=True)
+    # get unicode str
+    result_str = str(result_b, encoding="utf-8")
     with open('output.ui', 'w') as f:
-        f.write(str(result))
+        f.write(result_str)
 
 
 if __name__ == '__main__':
