@@ -13,6 +13,6 @@
     name="l"
     use-markup="True"
     label="&lt;span underline='single' background='#0f0'
-          &gt;Hello, world!&lt;/span&gt;" />
+          &gt;Hello, world!世界，你好！&lt;/span&gt;" />
 
 </Window>
