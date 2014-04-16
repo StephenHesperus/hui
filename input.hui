@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Window
+  name="main"
+  class="blue green"
+  default_width="300"
+	default_height="300"
+  icon="gui/images/mouse-48x48.png"
+	position="Gtk.WindowPosition.CENTER"
+	gravity="Gravity.EAST"
+	title="Guiml Window">
+
+  <Label
+    name="l"
+    use-markup="True"
+    label="&lt;span underline='single' background='#0f0'
+          &gt;Hello, world!&lt;/span&gt;" />
+
+</Window>
