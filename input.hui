@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Window
+  interface-requires="gtk+ 3.0"
+  domain="en_US"
   name="main"
   class="blue green"
   default_width="300"

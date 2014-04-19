@@ -4,10 +4,22 @@
 
   <xsl:output method="xml" encoding="utf-8" indent="yes" />
 
-  <xsl:template match="@*|node()">
-    <xsl:copy>
-      <xsl:apply-templates select="@*|node()" />
-    </xsl:copy>
+  <!-- Create interface-requires comment node
+       and interface element -->
+  <xsl:template match="/">
+    <xsl:comment>
+      <xsl:text>interface-requires </xsl:text>
+      <xsl:value-of select="/*[position()=1]/@interface-requires" />
+      <xsl:text> </xsl:text>
+    </xsl:comment>
+    <interface>
+      <xsl:variable name="domain" select="/*[position()=1]/@domain" />
+      <xsl:if test="$domain">
+        <xsl:attribute name="domain">
+          <xsl:value-of select="$domain" />
+        </xsl:attribute>
+      </xsl:if>
+    </interface>
   </xsl:template>
 
 </xsl:stylesheet>

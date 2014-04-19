@@ -26,7 +26,7 @@ def main():
     # get bytes object with xml declaration and xml encoding attribute
     result_b = etree.tostring(result, encoding="utf-8", xml_declaration=True)
     # get unicode str
-    result_str = str(result_b, encoding="utf-8")
+    result_str = str(result_b, encoding="utf-8") if result_b else ''
     with open('output.ui', 'w') as f:
         f.write(result_str)
 
